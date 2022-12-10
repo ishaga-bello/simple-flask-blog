@@ -2,7 +2,10 @@
 
 {%block content%}
     <h2>{%block title%} {{ post['title'] }} {%endblock%}</h2>
-    <span class="badge badge-primary">{{ post['created'] }}</span>
+    <a href="{{ url_for('edit', id=post['id']) }}">
+        <span style="color:blueviolet" class="badge badge-warning">Edit</span>
+    </a>
+    <span style="color:blue"  class="badge badge-primary">{{ post['created'] }}</span>
     <p>{{ post['content'] }}</p>
 
 {%endblock%}
